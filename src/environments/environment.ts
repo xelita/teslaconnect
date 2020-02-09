@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  tesla_api_base_url: 'https://owner-api.teslamotors.com/api/1',
+  auth_token: ''
 };
 
 /*

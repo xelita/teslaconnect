@@ -1,0 +1,15 @@
+div {
+  font-weight: bold;
+  text-transform: uppercase;
+
+  p {
+    display: inline;
+  }
+
+  mat-icon {
+    position: relative;
+    top: 6px;
+    cursor: pointer;
+  }
+}
+

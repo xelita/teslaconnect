@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Please log in</h2>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="formClickHandler()">
+    <mat-form-field class="token-form-field">
+      <input matInput placeholder="Please enter your token" type="text" formControlName="token">
+    </mat-form-field>
+
+    <div class="action">
+      <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Validate</button>
+    </div>
+  </form>
+</div>
+
+<div class="devtool">
+  <button mat-fab (click)="devClickHandler()">
+    <mat-icon>build</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,59 @@
+mat-card {
+  box-shadow: none !important;
+  padding: 16px 0;
+
+  .online {
+    border-left-color: green;
+  }
+}
+
+mat-card-title {
+  border: transparent;
+  border-left: 10px solid red;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+mat-card-content {
+  width: 100%;
+  text-align: center;
+
+  img {
+    max-width: 800px;
+  }
+
+  div.model-description {
+    max-width: 800px;
+    text-align: left;
+    margin: 15px auto;
+  }
+
+  .sections {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+    section {
+      margin: 10px 0 10px 20px;
+      border-left: 2px solid whitesmoke;
+      padding-left: 10px;
+
+      .section-name {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .section-item {
+        text-transform: capitalize;
+        font-weight: lighter;
+        font-size: small;
+        color: grey;
+      }
+    }
+  }
+}
+
+mat-card-actions {
+  margin-right: 15px;
+}
