@@ -5,19 +5,21 @@ div.container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.action {
-  text-align: center;
-  margin: 10px 0;
-}
+  .form {
+    width: 500px;
 
-form {
-  width: 100%;
-  text-align: center;
+    > * {
+      display: block;
+      margin: 0 30px;
+    }
+  }
 
-  .token-form-field {
-    width: 400px;
+  .action {
+    text-align: center;
+    margin: 10px 0;
   }
 }
+
+
 

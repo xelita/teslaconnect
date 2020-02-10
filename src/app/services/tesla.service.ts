@@ -13,6 +13,7 @@ import {AuthTokenModel} from '../models/auth-token.model';
 })
 export class TeslaService {
 
+  private oauthBaseUrl: string = environment.tesla_oauth_base_url;
   private apiBaseUrl: string = environment.tesla_api_base_url;
 
   constructor(
@@ -29,7 +30,7 @@ export class TeslaService {
       grant_type: 'password'
     };
     return this.http
-      .post<AuthTokenModel>(`${this.apiBaseUrl}/oauth/token`, body)
+      .post<AuthTokenModel>(`${this.oauthBaseUrl}/token`, body)
       .pipe(map(result => result));
   }
 
@@ -131,6 +132,10 @@ export class TeslaService {
 
   getStoredAccessToken(): string {
     return this.storageService.read('token');
+  }
+
+  setStoredAccessToken(token: string): void {
+    this.storageService.write('token', token);
   }
 
   clearStoredAccessToken(): void {

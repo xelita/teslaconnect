@@ -2,8 +2,11 @@
   <h2>Please log in</h2>
 
   <form class="form" [formGroup]="form" (ngSubmit)="formClickHandler()">
-    <mat-form-field class="token-form-field">
-      <input matInput placeholder="Please enter your token" type="text" formControlName="token">
+    <mat-form-field>
+      <input formControlName="email" matInput placeholder="Please enter your email" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="password" matInput placeholder="Please enter your password" type="password">
     </mat-form-field>
 
     <div class="action">
