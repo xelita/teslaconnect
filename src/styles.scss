@@ -9,9 +9,13 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.devtool {
+.devtool, .top-action {
   position: absolute;
   top: 15px;
   right: 15px;
+
+  > button:not(:last-child) {
+    margin: 0 10px;
+  }
 }
 

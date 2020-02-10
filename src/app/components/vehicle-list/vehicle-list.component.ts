@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {VehicleModel} from '../../models/vehicle.model';
+import {NavigationService} from '../../shared/services/navigation.service';
+import {TeslaService} from '../../services/tesla.service';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -9,9 +11,11 @@ import {VehicleModel} from '../../models/vehicle.model';
 })
 export class VehicleListComponent implements OnInit {
 
-  private vehicles: VehicleModel[];
+  vehicles: VehicleModel[];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private navigationService: NavigationService,
+              private teslaService: TeslaService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -21,5 +25,10 @@ export class VehicleListComponent implements OnInit {
   onVehiclesReceived(vehicles: VehicleModel[]) {
     console.log(vehicles);
     this.vehicles = vehicles;
+  }
+
+  exitClickHandler() {
+    this.teslaService.clearStoredAccessToken();
+    this.navigationService.goSignIn();
   }
 }

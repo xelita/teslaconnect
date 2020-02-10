@@ -7,7 +7,10 @@
     </mat-form-field>
 
     <div class="action">
-      <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Validate</button>
+      <button [disabled]="!form.valid" mat-stroked-button type="submit">
+        <mat-icon>fingerprint</mat-icon>
+        VALIDATE
+      </button>
     </div>
   </form>
 </div>

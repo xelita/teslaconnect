@@ -9,7 +9,7 @@ import {VehicleModel} from '../../models/vehicle.model';
 })
 export class VehiculeDetailsComponent implements OnInit {
 
-  private vehicle: VehicleModel;
+  vehicle: VehicleModel;
 
   constructor(private route: ActivatedRoute) {
   }

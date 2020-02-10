@@ -16,13 +16,13 @@ import {LockingActionsComponent} from '../vehicle-actions/locking-actions/lockin
 export class VehicleListItemComponent implements OnInit {
 
   @Input()
-  private vehicle: VehicleModel;
+  vehicle: VehicleModel;
 
   @Input()
-  private withDetails: boolean;
+  withDetails: boolean;
 
   @Input()
-  private action: string;
+  action: string;
 
   constructor(private navigationService: NavigationService,
               private notificationService: NotificationService,

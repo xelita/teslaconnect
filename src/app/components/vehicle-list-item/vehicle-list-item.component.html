@@ -3,10 +3,11 @@
     <mat-card-title [ngClass]="vehicle?.state">{{vehicle?.display_name}} ({{vehicle?.state}})</mat-card-title>
     <mat-card-subtitle>ID: {{vehicle?.id_s}}</mat-card-subtitle>
     <mat-card-subtitle>VIN: {{vehicle?.vin}}</mat-card-subtitle>
-    <mat-card-subtitle>Model: {{vehicle?.vehicle_config?.car_type}} - {{vehicle?.vehicle_config?.exterior_color}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="!detailsButtonVisible(vehicle)">Mileage: {{vehicle?.vehicle_state?.odometer}}
+    <mat-card-subtitle *ngIf="vehicleOnline(vehicle)">Model: {{vehicle?.vehicle_config?.car_type}}
+      - {{vehicle?.vehicle_config?.exterior_color}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="vehicleOnline(vehicle)">Mileage: {{vehicle?.vehicle_state?.odometer}}
     </mat-card-subtitle>
-    <mat-card-subtitle *ngIf="!detailsButtonVisible(vehicle)">
+    <mat-card-subtitle *ngIf="vehicleOnline(vehicle)">
       Soft. Version: {{vehicle?.vehicle_state?.car_version}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -38,7 +39,7 @@
         <app-more-actions-label label="Drive state"></app-more-actions-label>
         <p class="section-item">Latitude: {{vehicle?.drive_state?.latitude}}</p>
         <p class="section-item">Longitude: {{vehicle?.drive_state?.longitude}}</p>
-        <p class="section-item" *ngIf="speed">Speed: {{vehicle?.drive_state?.speed}}</p>
+        <p class="section-item">Speed: {{vehicle?.drive_state?.speed}}</p>
       </section>
       <section *ngIf="withDetails">
         <app-more-actions-label label="Climate state"></app-more-actions-label>
@@ -69,6 +70,7 @@
     </button>
     <button mat-stroked-button (click)="wakeUpVehicleClickHandler(vehicle?.id_s)"
             *ngIf="!vehicleOnline(vehicle)">
+      <mat-icon>update</mat-icon>
       WAKE UP VEHICLE
     </button>
   </mat-card-actions>

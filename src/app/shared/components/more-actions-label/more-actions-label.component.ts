@@ -8,10 +8,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class MoreActionsLabelComponent implements OnInit {
 
   @Input()
-  private label: string;
+  label: string;
 
   @Output()
-  private clicked = new EventEmitter();
+  clicked = new EventEmitter();
 
   constructor() {
   }

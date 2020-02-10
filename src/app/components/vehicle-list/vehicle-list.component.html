@@ -1,1 +1,7 @@
 <app-vehicle-list-item *ngFor="let vehicle of vehicles" [vehicle]="vehicle"></app-vehicle-list-item>
+
+<div class="top-action">
+  <button (click)="exitClickHandler()" mat-fab>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</div>

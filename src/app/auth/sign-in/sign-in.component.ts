@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {NotificationService} from '../../shared/services/notification.service';
 import {NavigationService} from '../../shared/services/navigation.service';
 import {StorageService} from '../../shared/services/storage.service';
 import {environment} from '../../../environments/environment';
@@ -12,11 +11,10 @@ import {environment} from '../../../environments/environment';
 })
 export class SignInComponent implements OnInit {
 
-  private form: FormGroup;
+  form: FormGroup;
 
   constructor(
     private navigationService: NavigationService,
-    private notificationService: NotificationService,
     private storageService: StorageService) {
   }
 

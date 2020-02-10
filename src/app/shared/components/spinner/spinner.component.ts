@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SpinnerComponent implements OnInit {
 
-  private display: boolean;
+  loading: boolean;
 
   constructor() {
   }
@@ -16,10 +16,10 @@ export class SpinnerComponent implements OnInit {
   }
 
   show(): void {
-    this.display = true;
+    this.loading = true;
   }
 
   hide(): void {
-    this.display = false;
+    this.loading = false;
   }
 }
