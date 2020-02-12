@@ -1,16 +1,26 @@
-<div class="container">
-  <h2>Please log in</h2>
+<div class="top-title">
+  <h1>
+    my
+    <img src="../../../assets/logo-small.png">
+    connect
+  </h1>
+</div>
 
+<div class="background-image"></div>
+
+<div class="container">
   <form class="form" [formGroup]="form" (ngSubmit)="formClickHandler()">
     <mat-form-field>
-      <input formControlName="email" matInput placeholder="Please enter your email" type="text">
+      <input autocomplete="off" formControlName="email" matInput placeholder="Please enter your email"
+             required type="text">
     </mat-form-field>
     <mat-form-field>
-      <input formControlName="password" matInput placeholder="Please enter your password" type="password">
+      <input autocomplete="off" formControlName="password" matInput placeholder="Please enter your password"
+             required type="password">
     </mat-form-field>
 
     <div class="action">
-      <button [disabled]="!form.valid" mat-stroked-button type="submit">
+      <button [disabled]="!form.valid" color="accent" mat-flat-button type="submit">
         <mat-icon>fingerprint</mat-icon>
         VALIDATE
       </button>
@@ -18,8 +28,10 @@
   </form>
 </div>
 
-<div class="devtool">
+<!--
+<div class="top-action">
   <button mat-fab (click)="devClickHandler()">
     <mat-icon>build</mat-icon>
   </button>
 </div>
+-->

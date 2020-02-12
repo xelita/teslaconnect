@@ -3,6 +3,8 @@ import {Observable} from 'rxjs';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {LoaderService} from './loader.service';
 import {NotificationService} from '../notification.service';
+import {NavigationService} from '../navigation.service';
+import {TeslaService} from '../../../services/tesla.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,9 @@ export class LoaderInterceptor implements HttpInterceptor {
 
   private requests: HttpRequest<any>[] = [];
 
-  constructor(private notificationService: NotificationService,
+  constructor(private navigationService: NavigationService,
+              private notificationService: NotificationService,
+              private teslaService: TeslaService,
               private loaderService: LoaderService) {
   }
 
@@ -28,7 +32,11 @@ export class LoaderInterceptor implements HttpInterceptor {
         },
         err => {
           console.error(err);
-          this.notificationService.notify(err);
+          if (err.status === 401) {
+            this.teslaService.clearStoredAccessToken();
+            this.navigationService.goSignIn();
+          }
+          this.notificationService.notify(`An error occurred: ${err.statusText} (${err.status}) - ${err.message}`);
           this.removeRequest(req);
           observer.error(err);
         },

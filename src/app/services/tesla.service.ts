@@ -34,9 +34,11 @@ export class TeslaService {
       .pipe(map(result => result));
   }
 
-  revokeAccessToken(token: string): Observable<void> {
+  revokeAccessToken(): Observable<void> {
+    const headers = this.getHeaderWithAuth();
+    const token = this.getStoredAccessToken();
     return this.http
-      .post<void>(`${this.apiBaseUrl}/oauth/revoke`, {token});
+      .post<void>(`${this.oauthBaseUrl}/revoke`, {token}, {headers});
   }
 
   getVehicles(): Observable<VehicleModel[]> {

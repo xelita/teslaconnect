@@ -28,6 +28,10 @@ export class VehiculeDetailsComponent implements OnInit {
   }
 
   exitClickHandler() {
+    this.teslaService.revokeAccessToken().subscribe(() => this.onAccessRevoked());
+  }
+
+  onAccessRevoked() {
     this.teslaService.clearStoredAccessToken();
     this.navigationService.goSignIn();
   }

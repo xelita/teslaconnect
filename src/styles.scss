@@ -3,14 +3,24 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: whitesmoke;
 }
 
-p {
-  margin: 10px 0;
-  line-height: 20px;
+.top-title {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #cc0000;
+
+  img {
+    position: relative;
+    top: 20px;
+  }
 }
 
-.devtool, .top-action {
+.top-action {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -20,3 +30,6 @@ p {
   }
 }
 
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: #cc0000;
+}

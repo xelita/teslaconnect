@@ -1,6 +1,17 @@
+<div class="top-title">
+  <h1>
+    my
+    <img src="../../../assets/logo-small.png">
+    vehicles
+  </h1>
+</div>
+
 <app-vehicle-view [vehicle]="vehicle"></app-vehicle-view>
 
 <div class="top-action">
+  <button mat-fab>
+    <mat-icon>perm_identity</mat-icon>
+  </button>
   <button (click)="exitClickHandler()" mat-fab>
     <mat-icon>exit_to_app</mat-icon>
   </button>

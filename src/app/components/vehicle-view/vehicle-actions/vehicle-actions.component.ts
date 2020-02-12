@@ -46,4 +46,11 @@ export class VehicleActionsComponent implements OnInit {
   vehicleDetailsClickHandler(id: string) {
     this.navigationService.goVehicleDetails(id);
   }
+
+  wakeUpVehicleClickHandler(id: string) {
+    this.teslaService.wakeUp(id).subscribe((vehicle) => {
+      this.vehicle.state = 'online';
+      this.vehicle = vehicle;
+    });
+  }
 }

@@ -43,10 +43,14 @@
   </div>
 </div>
 <div class="button-bar">
-  <button (click)="vehicleDetailsClickHandler(vehicle?.id_s)" *ngIf="!vehicle.vehicle_config" mat-stroked-button>
+  <button (click)="vehicleDetailsClickHandler(vehicle?.id_s)" *ngIf="vehicleOnline(vehicle) && !vehicle.vehicle_config"
+          color="accent"
+          mat-flat-button>
     DETAILS
   </button>
-  <button *ngIf="!vehicleOnline(vehicle)" mat-stroked-button>
+  <button (click)="wakeUpVehicleClickHandler(vehicle?.id_s)" *ngIf="!vehicleOnline(vehicle)"
+          color="accent"
+          mat-flat-button>
     <mat-icon>update</mat-icon>
     WAKE UP VEHICLE
   </button>
