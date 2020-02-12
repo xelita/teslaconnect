@@ -1,0 +1,11 @@
+<div>
+  <p [ngClass]="vehicle?.state" class="state">{{vehicle?.display_name}} ({{vehicle?.state}})</p>
+  <p>ID: {{vehicle?.id_s}}</p>
+  <p>VIN: {{vehicle?.vin}}</p>
+  <p *ngIf="detailsAvailable(vehicle)">Model: {{vehicle?.vehicle_config?.car_type}}</p>
+  <p *ngIf="detailsAvailable(vehicle)">Color: {{vehicle?.vehicle_config?.exterior_color}}</p>
+  <p *ngIf="detailsAvailable(vehicle)">Mileage: {{vehicle?.vehicle_state?.odometer}}</p>
+  <p *ngIf="detailsAvailable(vehicle)">
+    Software Version: {{vehicle?.vehicle_state?.car_version}}
+  </p>
+</div>

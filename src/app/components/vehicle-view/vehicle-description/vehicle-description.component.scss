@@ -1,0 +1,16 @@
+div {
+  color: grey;
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: center;
+
+  img {
+    max-width: 800px;
+  }
+
+  p.model-description {
+    max-width: 800px;
+    text-align: left;
+    margin: 15px auto;
+  }
+}

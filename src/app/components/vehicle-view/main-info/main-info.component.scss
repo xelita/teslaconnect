@@ -1,0 +1,19 @@
+div {
+  color: grey;
+  font-size: 14px;
+  font-weight: lighter;
+
+  p.state {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    border: transparent;
+    border-left: 10px solid red;
+    padding-left: 10px;
+    text-transform: uppercase;
+
+    &.online {
+      border-left-color: green;
+    }
+  }
+}

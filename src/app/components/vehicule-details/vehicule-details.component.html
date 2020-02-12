@@ -1,1 +1,7 @@
-<app-vehicle-list-item [vehicle]="vehicle" [withDetails]="true"></app-vehicle-list-item>
+<app-vehicle-view [vehicle]="vehicle"></app-vehicle-view>
+
+<div class="top-action">
+  <button (click)="exitClickHandler()" mat-fab>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</div>

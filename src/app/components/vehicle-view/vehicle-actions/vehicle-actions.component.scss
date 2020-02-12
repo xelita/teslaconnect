@@ -1,0 +1,28 @@
+div {
+  color: grey;
+  font-size: 14px;
+  font-weight: lighter;
+
+  &.vehicle-state {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+
+    .action {
+      margin: 10px 0 10px 20px;
+      border-left: 2px solid whitesmoke;
+      padding-left: 10px;
+    }
+  }
+
+  &.button-bar {
+    width: 100%;
+    text-align: right;
+    color: black;
+
+    button:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}

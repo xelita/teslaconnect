@@ -17,7 +17,7 @@ export class NavigationService {
     this.router.navigate(['/vehicles']);
   }
 
-  goVehicleDetails(id: number) {
+  goVehicleDetails(id: string) {
     this.router.navigate(['/vehicles', id]);
   }
 }

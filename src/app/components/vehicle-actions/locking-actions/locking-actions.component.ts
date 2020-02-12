@@ -20,7 +20,7 @@ export class LockingActionsComponent implements OnInit {
   }
 
   doorLock(event: MouseEvent): void {
-    this.teslaService.doorLock(this.data.id).subscribe(data => {
+    this.teslaService.doorLock(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Doors has been locked.');
       } else {
@@ -32,7 +32,7 @@ export class LockingActionsComponent implements OnInit {
   }
 
   doorUnlock(event: MouseEvent): void {
-    this.teslaService.doorUnlock(this.data.id).subscribe(data => {
+    this.teslaService.doorUnlock(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Doors has been unlocked.');
       } else {

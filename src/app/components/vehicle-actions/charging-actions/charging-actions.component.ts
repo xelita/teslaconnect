@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material';
 import {TeslaService} from '../../../services/tesla.service';
 import {NotificationService} from '../../../shared/services/notification.service';
@@ -20,7 +20,7 @@ export class ChargingActionsComponent implements OnInit {
   }
 
   startCharge(event: MouseEvent): void {
-    this.teslaService.startCharge(this.data.id).subscribe(data => {
+    this.teslaService.startCharge(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Charging process started.');
       } else {
@@ -32,7 +32,7 @@ export class ChargingActionsComponent implements OnInit {
   }
 
   stopCharge(event: MouseEvent): void {
-    this.teslaService.stopCharge(this.data.id).subscribe(data => {
+    this.teslaService.stopCharge(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Charging process stopped.');
       } else {

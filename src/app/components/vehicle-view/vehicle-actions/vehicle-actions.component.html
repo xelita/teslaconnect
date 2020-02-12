@@ -1,0 +1,53 @@
+<div *ngIf="vehicle.vehicle_config" class="vehicle-state">
+  <div class="action">
+    <app-more-actions-label (clicked)="displayLockingActions(vehicle)" label="Lock state"></app-more-actions-label>
+    <p>Locked: {{vehicle?.vehicle_state?.locked}}</p>
+  </div>
+
+  <div class="action">
+    <app-more-actions-label (clicked)="displayChargeActions(vehicle)" label="Charge state"></app-more-actions-label>
+    <p>Charging state: {{vehicle?.charge_state?.charging_state}}</p>
+    <p>Battery level: {{vehicle?.charge_state?.battery_level}}% / {{vehicle?.charge_state?.charge_limit_soc}}%</p>
+    <p *ngIf="vehicle?.charge_state?.charging_state === 'Charging'">Time to Full
+      Charge: {{vehicle?.charge_state?.time_to_full_charge}} hours</p>
+  </div>
+
+  <div class="action">
+    <app-more-actions-label label="Drive state"></app-more-actions-label>
+    <p>Latitude: {{vehicle?.drive_state?.latitude}}</p>
+    <p>Longitude: {{vehicle?.drive_state?.longitude}}</p>
+    <p>Speed: {{vehicle?.drive_state?.speed}}</p>
+  </div>
+
+  <div class="action">
+    <app-more-actions-label label="Climate state"></app-more-actions-label>
+    <p>Inside temperature: {{vehicle?.climate_state?.inside_temp}}°C</p>
+    <p>Outside temperature: {{vehicle?.climate_state?.outside_temp}}°C</p>
+  </div>
+
+  <div class="action">
+    <app-more-actions-label label="Sentry Mode"></app-more-actions-label>
+    <p>Sentry mode available: {{vehicle?.vehicle_state?.sentry_mode_available}}</p>
+    <p>Sentry mode activated: {{vehicle?.vehicle_state?.sentry_mode}}</p>
+  </div>
+
+  <div class="action">
+    <app-more-actions-label label="Speed Limit"></app-more-actions-label>
+    <p>Speed limit setting: {{vehicle?.vehicle_state?.speed_limit_mode.current_limit_mph}} MPH</p>
+    <p>Speed limit activated: {{vehicle?.vehicle_state?.speed_limit_mode.active}}</p>
+  </div>
+
+  <div class="action">
+    <app-more-actions-label (clicked)="displayMiscActions(vehicle)" label="Commands"></app-more-actions-label>
+    <p>Other commands available for your vehicle.</p>
+  </div>
+</div>
+<div class="button-bar">
+  <button (click)="vehicleDetailsClickHandler(vehicle?.id_s)" *ngIf="!vehicle.vehicle_config" mat-stroked-button>
+    DETAILS
+  </button>
+  <button *ngIf="!vehicleOnline(vehicle)" mat-stroked-button>
+    <mat-icon>update</mat-icon>
+    WAKE UP VEHICLE
+  </button>
+</div>

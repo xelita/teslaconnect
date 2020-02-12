@@ -20,7 +20,7 @@ export class MiscActionsComponent implements OnInit {
   }
 
   ventWindow(event: MouseEvent): void {
-    this.teslaService.ventWindow(this.data.id).subscribe(data => {
+    this.teslaService.ventWindow(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Window has been vented.');
       } else {
@@ -32,7 +32,7 @@ export class MiscActionsComponent implements OnInit {
   }
 
   closeWindow(event: MouseEvent): void {
-    this.teslaService.closeWindow(this.data.id).subscribe(data => {
+    this.teslaService.closeWindow(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Window has been closed.');
       } else {
@@ -44,7 +44,7 @@ export class MiscActionsComponent implements OnInit {
   }
 
   openFrunk(event: MouseEvent): void {
-    this.teslaService.openFrunk(this.data.id).subscribe(data => {
+    this.teslaService.openFrunk(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Frunk has been open.');
       } else {
@@ -56,7 +56,7 @@ export class MiscActionsComponent implements OnInit {
   }
 
   openTrunk(event: MouseEvent): void {
-    this.teslaService.openTrunk(this.data.id).subscribe(data => {
+    this.teslaService.openTrunk(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Trunk has been open.');
       } else {
@@ -68,7 +68,7 @@ export class MiscActionsComponent implements OnInit {
   }
 
   honkHorn(event: MouseEvent): void {
-    this.teslaService.honkHorn(this.data.id).subscribe(data => {
+    this.teslaService.honkHorn(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Horn has been honked.');
       } else {
@@ -80,7 +80,7 @@ export class MiscActionsComponent implements OnInit {
   }
 
   flashLights(event: MouseEvent): void {
-    this.teslaService.flashLights(this.data.id).subscribe(data => {
+    this.teslaService.flashLights(this.data.vehicle.id_s).subscribe(data => {
       if (data.result === true) {
         this.notificationService.notify('Lights have been flashed.');
       } else {
