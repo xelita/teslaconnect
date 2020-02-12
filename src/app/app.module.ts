@@ -17,7 +17,7 @@ import {
   MatSnackBarModule
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {VehicleListComponent} from './components/vehicle-list/vehicle-list.component';
 import {VehiculeDetailsComponent} from './components/vehicule-details/vehicule-details.component';
 import {ChargingActionsComponent} from './components/vehicle-actions/charging-actions/charging-actions.component';
@@ -30,6 +30,7 @@ import {VehicleViewComponent} from './components/vehicle-view/vehicle-view.compo
 import {MainInfoComponent} from './components/vehicle-view/main-info/main-info.component';
 import {VehicleDescriptionComponent} from './components/vehicle-view/vehicle-description/vehicle-description.component';
 import {VehicleActionsComponent} from './components/vehicle-view/vehicle-actions/vehicle-actions.component';
+import {LoaderInterceptor} from './shared/services/loader/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,9 @@ import {VehicleActionsComponent} from './components/vehicle-view/vehicle-actions
     MatBottomSheetModule,
     MatListModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
