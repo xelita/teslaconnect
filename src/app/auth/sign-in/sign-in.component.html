@@ -20,7 +20,7 @@
   </form>
 </div>
 
-<div class="top-action">
+<div *ngIf="showTopAction()" class="top-action">
   <button mat-fab (click)="devClickHandler()">
     <mat-icon>build</mat-icon>
   </button>

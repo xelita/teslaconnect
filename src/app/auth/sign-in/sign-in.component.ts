@@ -42,4 +42,8 @@ export class SignInComponent implements OnInit {
     this.form.get('email').setValue(environment.email);
     this.form.get('password').setValue(environment.password);
   }
+
+  showTopAction() {
+    return environment.production === false;
+  }
 }
