@@ -6,6 +6,7 @@ div {
 
   img {
     max-width: 1000px;
+    width: 100%;
   }
 
   p.model-description {
@@ -13,7 +14,6 @@ div {
     text-align: left;
     margin: 30px auto;
     padding: 0 15px;
-    border-left: 3px solid #cc0000;
     line-height: 25px;
   }
 }

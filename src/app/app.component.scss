@@ -1,0 +1,19 @@
+.top-title {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #cc0000;
+
+  img {
+    position: relative;
+    top: 20px;
+  }
+}
+
+@media (max-width: 699px) {
+  .top-title {
+    display: none;
+  }
+}
