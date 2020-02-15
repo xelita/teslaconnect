@@ -4,7 +4,6 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {PageNotFoundComponent} from './shared/components/page-not-found/page-not-found.component';
 import {SignInComponent} from './auth/sign-in/sign-in.component';
 import {
   MatBottomSheetModule,
@@ -36,7 +35,6 @@ import {LoaderInterceptor} from './shared/services/loader/loader.interceptor';
   declarations: [
     AppComponent,
     SignInComponent,
-    PageNotFoundComponent,
     SignInComponent,
     VehicleListComponent,
     VehiculeDetailsComponent,
