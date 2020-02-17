@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo Installing project dependencies using npm
+      - npm install
+      - npm install -g @angular/cli
+  build:
+    commands:
+      - echo Building project
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/teslaconnect'
+  discard-paths: no
