@@ -36,7 +36,7 @@ export class LoaderInterceptor implements HttpInterceptor {
             this.teslaService.clearStoredAccessToken();
             this.navigationService.goSignIn();
           }
-          this.notificationService.notify(`An error occurred: ${err.statusText} (${err.status}) - ${err.message}`);
+          this.notificationService.notify(`An error occurred: ${err.statusText} (${err.status})`);
           this.removeRequest(req);
           observer.error(err);
         },
