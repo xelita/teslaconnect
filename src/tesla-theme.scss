@@ -1,0 +1,16 @@
+@use "sass:map";
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Overriding red color with the real Tesla red !
+$mat-red: map.merge($mat-red, (900: #cc0000));
+
+$theme-primary: mat-palette($mat-gray, 900);
+$theme-accent: mat-palette($mat-red, 900);
+$theme-warn: mat-palette($mat-deep-orange, 900);
+
+$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+
+@include angular-material-theme($theme);
