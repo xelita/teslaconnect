@@ -6,12 +6,13 @@ phases:
       nodejs: 12
     commands:
       - echo Installing project dependencies using npm
-      - npm install
       - npm install -g @angular/cli
+      - npm install -g yarn
+      - yarn install
   build:
     commands:
       - echo Building project
-      - npm run build
+      - yarn run build
 artifacts:
   files:
     - '**/*'
