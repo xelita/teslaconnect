@@ -1,4 +1,4 @@
 <div>
   <p>{{label}}</p>
-  <mat-icon (click)="clickHandler()">more_vert</mat-icon>
+  <mat-icon (click)="clickHandler()" *ngIf="show">more_vert</mat-icon>
 </div>

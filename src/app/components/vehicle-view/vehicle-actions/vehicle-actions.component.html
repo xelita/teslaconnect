@@ -1,11 +1,13 @@
 <div *ngIf="vehicle.vehicle_config" class="vehicle-state">
   <div class="action">
-    <app-more-actions-label (clicked)="displayLockingActions(vehicle)" label="Lock state"></app-more-actions-label>
+    <app-more-actions-label (clicked)="displayLockingActions(vehicle)" [show]="true"
+                            label="Lock state"></app-more-actions-label>
     <p>Locked: {{vehicle?.vehicle_state?.locked}}</p>
   </div>
 
   <div class="action">
-    <app-more-actions-label (clicked)="displayChargeActions(vehicle)" label="Charge state"></app-more-actions-label>
+    <app-more-actions-label (clicked)="displayChargeActions(vehicle)" [show]="true"
+                            label="Charge state"></app-more-actions-label>
     <p>Charging state: {{vehicle?.charge_state?.charging_state}}</p>
     <p>Battery level: {{vehicle?.charge_state?.battery_level}}% / {{vehicle?.charge_state?.charge_limit_soc}}%</p>
     <p *ngIf="vehicle?.charge_state?.charging_state === 'Charging'">Time to Full
@@ -38,7 +40,8 @@
   </div>
 
   <div class="action">
-    <app-more-actions-label (clicked)="displayMiscActions(vehicle)" label="Other Commands"></app-more-actions-label>
+    <app-more-actions-label (clicked)="displayMiscActions(vehicle)" [show]="true"
+                            label="Other Commands"></app-more-actions-label>
     <p>Other available commands.</p>
   </div>
 </div>

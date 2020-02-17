@@ -10,6 +10,9 @@ export class MoreActionsLabelComponent implements OnInit {
   @Input()
   label: string;
 
+  @Input()
+  show: boolean;
+
   @Output()
   clicked = new EventEmitter();
 
