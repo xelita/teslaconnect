@@ -16,7 +16,7 @@
     "electron:run": "electron .",
     "electron:pack": "yarn run electron:clean && electron-builder --dir",
     "electron:dist": "yarn run electron:clean && electron-builder",
-    "electron:publish": "electron-builder -p always"
+    "electron:publish": "yarn run electron:clean && electron-builder -p always"
   },
   "private": true,
   "dependencies": {
