@@ -15,7 +15,8 @@
     "electron:clean": "del-cli --force dist/electron",
     "electron:run": "electron .",
     "electron:pack": "yarn run electron:clean && electron-builder --dir",
-    "electron:dist": "yarn run electron:clean && electron-builder"
+    "electron:dist": "yarn run electron:clean && electron-builder",
+    "electron:publish": "electron-builder -p always"
   },
   "private": true,
   "dependencies": {
@@ -74,6 +75,15 @@
     },
     "mac": {
       "category": "public.app-category.lifestyle"
+    },
+    "publish": {
+      "provider": "s3",
+      "bucket": "teslaconnect",
+      "region": "eu-west-3",
+      "acl": "public-read",
+      "storageClass": "REDUCED_REDUNDANCY",
+      "encryption": "AES256",
+      "path": "/electron"
     }
   }
 }
