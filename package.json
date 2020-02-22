@@ -1,6 +1,8 @@
 {
   "name": "teslaconnect",
-  "version": "0.0.0",
+  "description": "Manage your Tesla vehicules with TeslaConnect",
+  "version": "1.0.0",
+  "author": "xelita (Benjamin SEMPERE) <dev@xelita.com>",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -9,8 +11,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "electron": "npm run build && electron .",
-    "pwa": "http-server ./dist/teslaconnect"
+    "pwa": "http-server ./dist/teslaconnect",
+    "electron:clean": "del-cli --force dist/electron",
+    "electron:run": "electron .",
+    "electron:pack": "yarn run electron:clean && electron-builder --dir",
+    "electron:dist": "yarn run electron:clean && electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -38,7 +43,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "del-cli": "^3.0.0",
     "electron": "^8.0.1",
+    "electron-builder": "^22.3.2",
     "http-server": "^0.12.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -51,5 +58,22 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
+  },
+  "build": {
+    "appId": "com.xelita.${name}",
+    "productName": "TeslaConnect",
+    "copyright": "Copyright © year ${author}",
+    "icon": "_build/tesla-logo-512.jpg",
+    "files": [
+      "main.js",
+      "dist/teslaconnect/**/*"
+    ],
+    "directories": {
+      "buildResources": "_build",
+      "output": "dist/electron"
+    },
+    "mac": {
+      "category": "public.app-category.lifestyle"
+    }
   }
 }
