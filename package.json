@@ -7,6 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:https": "ng serve --ssl true --ssl-key ./nginx/ssl/private/selfsigned.key --ssl-cert ./nginx/ssl/certs/selfsigned.crt",
     "build": "ng build --base-href ./ --prod",
     "test": "ng test",
     "lint": "ng lint",

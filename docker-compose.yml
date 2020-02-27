@@ -9,8 +9,7 @@ services:
       - ./nginx/snippets/self-signed.conf:/etc/nginx/snippets/self-signed.conf
       - ./nginx/snippets/ssl-params.conf:/etc/nginx/snippets/ssl-params.conf
       - ./nginx/ssl/certs/teslamotors.crt:/etc/ssl/certs/teslamotors.crt
-      - ./nginx/ssl/certs/nginx-selfsigned.crt:/etc/ssl/certs/nginx-selfsigned.crt
-      - ./nginx/ssl/certs/dhparam.pem:/etc/ssl/certs/dhparam.pem
-      - ./nginx/ssl/private/nginx-selfsigned.key:/etc/ssl/private/nginx-selfsigned.key
+      - ./nginx/ssl/certs/selfsigned.crt:/etc/ssl/certs/selfsigned.crt
+      - ./nginx/ssl/private/selfsigned.key:/etc/ssl/private/selfsigned.key
     ports:
       - "443:443"
