@@ -46,7 +46,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "del-cli": "^3.0.0",
-    "electron": "^8.0.1",
+    "electron": "^9.4.0",
     "electron-builder": "^22.3.2",
     "http-server": "^0.12.1",
     "jasmine-core": "~3.4.0",
